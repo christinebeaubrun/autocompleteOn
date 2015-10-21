@@ -1,6 +1,7 @@
 /*
 
   AutocompleteOn function
+  Argument(s)
   -- custom list of strings  [Array]
 
   ex.
