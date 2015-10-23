@@ -1,0 +1,8 @@
+The changes I'd make here are as follows:
+
+-separate the markup from the javascript somewhat more by
+taking in an element to the autocompleting function.
+
+-separate the data handling from the display.  This would make it pretty easy to build an autocompleter that queries the network for stuff to match.
+
+-separate the rendering.  I don't know what you want to do here.  My initial impression is to append a div as the next child of the parent of the targeted input, and put stuff in there.

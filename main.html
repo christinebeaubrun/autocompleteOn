@@ -2,8 +2,15 @@
 <html>
   <head>
     <title>Autocomplete</title>
+    <!-- better to have the script tag here -->
+    <script type="text/javascript" src="autocomplete.js"></script>
+    <script type="text/javascript">
+      var data = ['apple', 'orange', 'grapefruit', 'banana'];
+      autocompleteOnInput(document.getElementById, data)
+    </script>
   </head>
   <body>
-    <script type="text/javascript" src="autocomplete.js"></script>
+    <!-- you should let the markup define where the autocomplete should go.-->
+    <input id="autocomplete"></input>
   </body>
 </html>
