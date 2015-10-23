@@ -46,3 +46,31 @@ var autocompleteOn = function ( arr) {
 
 var fruits = ['apple','orange','banana'];
 autocompleteOn( fruits );
+
+function staticSource(arr, config) {
+  return {
+    matcher: function (str) {
+      if (config.prefix) {  // allow for prefix-only matches
+        return new RegExp('^' + str, 'i');
+      } else {
+        return new RegExp(str, 'i');
+      }
+    },
+
+    matching: function (str) {
+      var result = [];
+      var m = this.matcher(str)
+      return arr.filter(function (x) { return x.match(m); });
+    }
+  };
+}
+
+function autocompleteOnInput(elt, source) {
+  function display(arr) {
+    // should overwrite old displayed stuff.
+  }
+  elt.onkeyup = function () {
+    var results = source.matching(elt.value.trim());
+    display(results)
+  }
+}
